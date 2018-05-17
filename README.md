@@ -1,24 +1,16 @@
-# README
+# Neo4j test
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is just a simple rails app playground for me to test neo4j graph database.
 
-Things you may want to cover:
+# Prerequisites
 
-* Ruby version
+* ruby 2.5.0
+* docker
+* docker-compose
 
-* System dependencies
+# Development
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Clone this repository
+* Start external services by running `start-services.sh` script
+* Start rails as usual `rails s` in a separate console
+* Access http://0.0.0.0:3000
