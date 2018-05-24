@@ -5,4 +5,6 @@ class User
   property :first_name
   property :last_name
   property :age, type: Integer
+
+  has_many :in, :tweets, origin: :author
 end
