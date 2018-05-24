@@ -7,8 +7,16 @@ services:
       - "7687:7687"
     volumes:
       - neo4j_data:/data
+  neo4j_test:
+    image: neo4j:3.2.6
+    ports:
+      - "7575:7474"
+      - "7688:7687"
+    volumes:
+      - neo4j_data_test:/data
 volumes:
   neo4j_data:
+  neo4j_data_test:
 
 
 

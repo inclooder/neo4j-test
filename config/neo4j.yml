@@ -4,7 +4,7 @@ development:
 
 test:
   type: http
-  url: http://localhost:7575
+  url: http://neo4j:pass@localhost:7575
 
 production:
   type: http
