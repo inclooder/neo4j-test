@@ -4,7 +4,7 @@
          <%= link_to "Logout", session_path, method: :delete %>
       </div>
       <div>
-         Logged in as <%= @current_user.name %>
+         Logged in as&nbsp;<%= link_to @current_user.name, @current_user %>
       </div>
    <% end %>
 </div>

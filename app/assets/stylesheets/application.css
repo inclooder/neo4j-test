@@ -15,10 +15,9 @@
  */
 
 body {
-  position: absolute;
   top: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   margin: 0;
 }
 
@@ -50,30 +49,63 @@ body {
 }
 
 .content .login {
-  position: relative;
   background-color: skyblue;
-  width: 400px;
-  height: 150px;
-  margin: 200px auto;
+  margin: 300px auto;
+  width: 300px;
+  padding: 50px 40px;
+  border-radius: 20px;
 }
 
 .content .login .form {
   display: table;
-  width: 80%;
   margin: 0 auto;
 }
 
-.tweets {
+.content {
   margin-top: 60px;
   width: 100%;
+}
 
+.tweets {
 }
 
 .tweets .tweet {
-  border: 1px solid black;
-  width: 500px;
-  padding: 10px 20px;
+  width: 50%;
+  border-bottom: 1px solid grey;
+  border-right: 1px solid grey;
+  border-left: 1px solid grey;
+  margin: 0 auto;
   margin-bottom: 10px;
+  padding: 0px 0px 10px;
+  border-radius: 5px;
 }
 
+.tweets .body {
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.tweets .header {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: grey;
+}
+
+.user {
+}
+
+.user .profile {
+  float: left;
+}
+
+.user .profile ul li {
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.user .profile ul {
+  margin: 0;
+  margin-left: 40px;
+  padding: 0;
+}
 

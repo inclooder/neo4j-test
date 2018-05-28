@@ -1,10 +1,1 @@
-<div class="tweets">
-  <% @tweets.each do |tweet| %>
-    <div class="tweet">
-      <%= tweet.body %>
-      <div class="tags">
-        Tags: <%= tweet.tags.pluck(:name).join(',') %>
-      </div>
-    </div>
-  <% end %>
-</div>
+<%= render partial: 'list', locals: { tweets: @tweets } %>
