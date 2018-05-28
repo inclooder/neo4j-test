@@ -47,4 +47,22 @@ describe User do
       expect(user.tweets.to_a).to match_array(tweets)
     end
   end
+
+  describe '#followers' do
+    it 'can have many followers' do
+      follower = create(:user)
+      followees = create_list(:user, 3)
+      follower.followees += followees
+      expect(follower.reload.followees).to match_array(followees)
+    end
+  end
+
+  describe '#followees' do
+    it 'can have many followers' do
+      followee = create(:user)
+      followers = create_list(:user, 3)
+      followee.followers += followers
+      expect(followee.reload.followers).to match_array(followers)
+    end
+  end
 end
