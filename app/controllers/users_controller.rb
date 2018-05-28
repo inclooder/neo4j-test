@@ -5,6 +5,6 @@ class UsersController < ApplicationController
     user = User.find_by!(name: params[:name])
     tweets = user.tweets
     is_following = user.followers.include?(current_user)
-    render locals: { user: user, tweets: tweets, is_following: is_following }
+    render locals: { user: user, tweets: tweets, is_following: is_following, current_user: current_user }
   end
 end
