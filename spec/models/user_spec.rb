@@ -12,6 +12,20 @@ describe User do
       create(:user, email: 'a@a.pl')
       expect(build(:user, email: 'a@a.pl')).not_to be_valid
     end
+
+    it 'requires name' do
+      user = build(:user, name: nil)
+      expect(user).not_to be_valid
+    end
+
+    it 'validates uniqueness of name' do
+      create(:user, name: 'john')
+      expect(build(:user, name: 'john')).not_to be_valid
+    end
+
+    it 'validates name to be in lowercase' do
+      expect(build(:user, name: 'John')).not_to be_valid
+    end
   end
 
   describe 'find_by' do
