@@ -14,9 +14,11 @@
 :constraints:
 - CONSTRAINT ON ( `neo4j::migrations::schemamigration`:`Neo4j::Migrations::SchemaMigration`
   ) ASSERT `neo4j::migrations::schemamigration`.migration_id IS UNIQUE
+- CONSTRAINT ON ( tag:Tag ) ASSERT tag.uuid IS UNIQUE
 - CONSTRAINT ON ( tweet:Tweet ) ASSERT tweet.uuid IS UNIQUE
 - CONSTRAINT ON ( user:User ) ASSERT user.uuid IS UNIQUE
 :indexes: []
 :versions:
 - '20180523093034'
 - '20180523095319'
+- '20180528065734'

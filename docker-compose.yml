@@ -7,6 +7,8 @@ services:
       - "7687:7687"
     volumes:
       - neo4j_data:/data
+    environment:
+      NEO4J_AUTH: none
   neo4j_test:
     image: neo4j:3.2.6
     ports:
@@ -14,6 +16,8 @@ services:
       - "7688:7687"
     volumes:
       - neo4j_data_test:/data
+    environment:
+      NEO4J_AUTH: none
 volumes:
   neo4j_data:
   neo4j_data_test:

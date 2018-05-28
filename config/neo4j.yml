@@ -1,10 +1,10 @@
 development:
   type: http
-  url: http://neo4j:pass@localhost:7474
+  url: http://localhost:7474
 
 test:
   type: http
-  url: http://neo4j:pass@localhost:7575
+  url: http://localhost:7575
 
 production:
   type: http
