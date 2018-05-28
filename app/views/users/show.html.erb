@@ -10,6 +10,14 @@
       <li>Followers: <%= user.followers.count %></li>
       <li>Followees: <%= user.followees.count %></li>
     </ul>
+    <% if is_following %>
+      <%= button_to 'Unfollow', followership_path(user.name), method: :delete  %>
+    <% else %>
+      <%= form_tag(followerships_path) do %>
+        <%= hidden_field_tag :followee_name, user.name %>
+        <%= submit_tag("Follow") %>
+      <% end %>
+    <% end %>
   </div>
   <%= render partial: 'tweets/list', locals: { tweets: tweets } %>
 </div>
