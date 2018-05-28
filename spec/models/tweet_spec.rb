@@ -17,10 +17,8 @@ describe Tweet do
 
   describe '#mentions' do
     it 'can have many mentions' do
-      tweet = create(:tweet)
       mentions = create_list(:user, 5)
-      tweet.mentions += mentions
-      tweet.save!
+      tweet = create(:tweet, mentions: mentions)
       expect(tweet.reload.mentions).to match_array(mentions)
     end
   end

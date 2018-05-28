@@ -5,18 +5,19 @@ namespace :db do
     require 'factory_bot'
     FactoryBot.find_definitions
 
-    users = FactoryBot.create_list(:user, 1000)
-    puts "Users generated."
+    users = FactoryBot.create_list(:user, 10)
+    puts 'Users generated.'
     tags = FactoryBot.create_list(:tag, 20)
-    puts "Tags generated."
+    puts 'Tags generated.'
     users.each do |user|
-      FactoryBot.create_list(
-        :tweet,
-        rand(20..100),
-        author: user,
-        tags: tags.sample(rand(0..5)),
-        mentions: users.sample(rand(0..8))
-      )
+      rand(10..30).times do
+        FactoryBot.create(
+          :tweet,
+          author: user,
+          tags: tags.sample(rand(1..5)),
+          mentions: (users - user).sample(rand(1..8))
+        )
+      end
       puts "Tweets for #{user.name} generated."
     end
   end
