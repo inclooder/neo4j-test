@@ -8,6 +8,11 @@ describe Tweet do
       tweet = build(:tweet, author: nil)
       expect(tweet).not_to be_valid
     end
+
+    it 'requires body' do
+      tweet = build(:tweet, body: nil)
+      expect(tweet).not_to be_valid
+    end
   end
 
   describe '#mentions' do
