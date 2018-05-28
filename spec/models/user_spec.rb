@@ -2,6 +2,18 @@
 require 'rails_helper'
 
 describe User do
+  describe 'model validations' do
+    it 'requires email' do
+      user = build(:user, email: nil)
+      expect(user).not_to be_valid
+    end
+
+    it 'validates uniqueness of email' do
+      create(:user, email: 'a@a.pl')
+      expect(build(:user, email: 'a@a.pl')).not_to be_valid
+    end
+  end
+
   describe 'find_by' do
     it 'returns correct record' do
       user = create(:user)
