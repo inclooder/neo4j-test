@@ -2,10 +2,10 @@
 
 FactoryBot.define do
   factory :user do
-    email { Faker::Internet.unique.email }
-    name { Faker::Name.unique.name.downcase }
-    first_name { Faker::Name.unique.first_name }
-    last_name { Faker::Name.unique.last_name }
+    email { generate(:email) }
+    name { generate(:name) }
+    first_name { Faker::Name.first_name }
+    last_name { Faker::Name.last_name }
     age { rand(10..40) }
   end
 end
