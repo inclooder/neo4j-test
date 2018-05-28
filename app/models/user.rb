@@ -7,4 +7,5 @@ class User
   property :age, type: Integer
 
   has_many :in, :tweets, origin: :author
+  has_many :in, :mentions, origin: :mentions, model_class: :Tweet
 end
